@@ -6,7 +6,7 @@
     "overview": "Fetches profile pictures for each user from a configured API and updates them daily.",
     "owner": "GalaxyCatDev",
     "category": "User Management",
-    "imageUrl": "https://raw.githubusercontent.com/GalaxyCatDev/GalaxyTV-PFP-Updater/main/thumb.png",
+    "imageUrl": "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/blob/main/thumb.png",
     "versions": [
       {
         "version": "1.0.0.0",
