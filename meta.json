@@ -1,18 +1,22 @@
 {
-  "category": "User Management",
-  "changelog": "Initial release with embedded settings panel and thumbnail support.",
-  "description": "Updates user profile pictures from an external API.",
+  "id": "8f3e2a1b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
   "guid": "8f3e2a1b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
   "name": "GalaxyTV PFP Updater",
+  "description": "Updates user profile pictures from an external API.",
   "overview": "Fetches profile pictures for each user from a configured API and updates them daily.",
   "owner": "GalaxyCatDev",
   "author": "GalaxyCatDev",
   "company": "GalaxyLabs",
-  "targetAbi": "12.0.0.0",
-  "timestamp": "0001-01-01T00:00:00.0000000Z",
+  "category": "User Management",
   "version": "1.0.0.0",
+  "targetAbi": "12.0.0.0",
+  "timestamp": "2026-09-22T00:00:00.0000000Z",
+  "changelog": "Initial release with embedded settings panel and thumbnail support.",
   "imagePath": "thumb.png",
+  "imageResourceName": "GalaxyLabs.JellyFin.Plugin.GalaxyTV_PFP_Updater.thumb.png",
   "status": "Active",
   "autoUpdate": false,
-  "assemblies": []
+  "assemblies": [
+    "GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.dll"
+  ]
 }

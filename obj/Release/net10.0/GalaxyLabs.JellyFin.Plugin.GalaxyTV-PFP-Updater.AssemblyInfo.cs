@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Fetches user profile pictures from an external API and updates Jellyfin users.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0+2798519242ef3abf503d8e438634bb6ae4cf6efc")]
 [assembly: System.Reflection.AssemblyProductAttribute("GalaxyTV PFP Updater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

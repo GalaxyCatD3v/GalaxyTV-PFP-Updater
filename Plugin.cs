@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
 using GalaxyLabs.JellyFin.Plugin.GalaxyTV_PFP_Updater.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Controller.Plugins;
-using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 
 namespace GalaxyLabs.JellyFin.Plugin.GalaxyTV_PFP_Updater
 {
-    public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages, IHasEmbeddedImage
+    public class Plugin : BasePlugin<PluginConfiguration>, IHasEmbeddedImage
     {
         public static Plugin? Instance { get; private set; }
 
@@ -23,19 +21,6 @@ namespace GalaxyLabs.JellyFin.Plugin.GalaxyTV_PFP_Updater
             : base(applicationPaths, xmlSerializer)
         {
             Instance = this;
-        }
-
-        public IEnumerable<PluginPageInfo> GetPages()
-        {
-            yield return new PluginPageInfo
-            {
-                Name = "GalaxyTV_PFP_Updater",
-                DisplayName = "GalaxyTV PFP",
-                EmbeddedResourcePath = $"{GetType().Namespace}.Configuration.config.html",
-                EnableInMainMenu = true,
-                MenuSection = "server",
-                MenuIcon = "account_box"
-            };
         }
     }
 }
