@@ -1,0 +1,5 @@
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Releasecls\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.AssemblyReference.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Releasecls\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.GeneratedMSBuildEditorConfig.editorconfig
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Releasecls\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfoInputs.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Releasecls\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfo.cs
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Releasecls\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.CoreCompileInputs.cache

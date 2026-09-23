@@ -1,0 +1,17 @@
+D:\jellyfin-CP\pfp\Jellyfin.Plugin.UserProfilePictureUpdater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.AssemblyReference.cache
+D:\jellyfin-CP\pfp\Jellyfin.Plugin.UserProfilePictureUpdater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.GeneratedMSBuildEditorConfig.editorconfig
+D:\jellyfin-CP\pfp\Jellyfin.Plugin.UserProfilePictureUpdater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfoInputs.cache
+D:\jellyfin-CP\pfp\Jellyfin.Plugin.UserProfilePictureUpdater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfo.cs
+D:\jellyfin-CP\pfp\Jellyfin.Plugin.UserProfilePictureUpdater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.CoreCompileInputs.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.AssemblyReference.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.GeneratedMSBuildEditorConfig.editorconfig
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfoInputs.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.AssemblyInfo.cs
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.csproj.CoreCompileInputs.cache
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\bin\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.deps.json
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\bin\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.dll
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\bin\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.pdb
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.dll
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\refint\Jellyfin.Plugin.UserProfilePictureUpdater.dll
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\Jellyfin.Plugin.UserProfilePictureUpdater.pdb
+D:\jellyfin-CP\pfp\GalaxyTV-PFP-Updater\obj\Release\net10.0\ref\Jellyfin.Plugin.UserProfilePictureUpdater.dll
