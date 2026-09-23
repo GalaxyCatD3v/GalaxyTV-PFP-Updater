@@ -1,0 +1,73 @@
+name: Update Manifest on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract release information
+        id: release_info
+        run: |
+          TAG_NAME="${{ github.event.release.tag_name }}"
+          REPO="${{ github.repository }}"
+          # Remove 'v' prefix for the version field if present
+          VERSION="${TAG_NAME#v}"
+          # Construct the source URL for the release asset
+          SOURCE_URL="https://github.com/${REPO}/releases/download/${TAG_NAME}/GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.zip"
+          # Current UTC timestamp in ISO 8601 format
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "source_url=${SOURCE_URL}" >> $GITHUB_OUTPUT
+          echo "timestamp=${TIMESTAMP}" >> $GITHUB_OUTPUT
+
+      - name: Download release asset and compute checksum
+        id: checksum
+        run: |
+          # Download the asset from the just-published release
+          gh release download ${{ github.event.release.tag_name }} \
+            --pattern "GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.zip" \
+            --dir ./tmp-asset
+
+          # Compute MD5 checksum (Jellyfin expects MD5)
+          CHECKSUM=$(md5sum ./tmp-asset/GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.zip | awk '{ print $1 }')
+          echo "checksum=${CHECKSUM}" >> $GITHUB_OUTPUT
+
+      - name: Update manifest.json
+        run: |
+          MANIFEST_PATH="repo/jellyfin/plugins/manifest.json"
+
+          # Use jq to update the first version entry in the manifest
+          jq --arg version "${{ steps.release_info.outputs.version }}" \
+             --arg changelog "Release ${{ steps.release_info.outputs.tag_name }}" \
+             --arg sourceUrl "${{ steps.release_info.outputs.source_url }}" \
+             --arg checksum "${{ steps.checksum.outputs.checksum }}" \
+             --arg timestamp "${{ steps.release_info.outputs.timestamp }}" \
+             '.[0].versions[0].version = $version |
+              .[0].versions[0].changelog = $changelog |
+              .[0].versions[0].sourceUrl = $sourceUrl |
+              .[0].versions[0].checksum = $checksum |
+              .[0].versions[0].timestamp = $timestamp' \
+             "$MANIFEST_PATH" > "$MANIFEST_PATH.tmp" && mv "$MANIFEST_PATH.tmp" "$MANIFEST_PATH"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add repo/jellyfin/plugins/manifest.json
+          git commit -m "Update manifest for release ${{ github.event.release.tag_name }}"
+          git push
