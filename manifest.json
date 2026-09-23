@@ -6,13 +6,13 @@
     "overview": "Fetches profile pictures for each user from a configured API and updates them daily.",
     "owner": "GalaxyCatDev",
     "category": "User Management",
-    "imageUrl": "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/blob/main/thumb.png",
+    "imageUrl": "https://raw.githubusercontent.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/refs/heads/main/thumb.png",
     "versions": [
       {
-        "version": "1.0.0.0",
-        "changelog": "Initial release with embedded settings panel and thumbnail support.",
+        "version": "1.0.0.1",
+        "changelog": "LFG.",
         "targetAbi": "12.0.0.0",
-        "sourceUrl": "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/archive/refs/tags/RC.zip",
+        "sourceUrl": "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/archive/refs/tags/2026-09-23.zip",
         "checksum": "",
         "timestamp": "2026-09-23T00:00:00Z"
       }
