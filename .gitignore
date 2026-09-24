@@ -485,3 +485,4 @@ $RECYCLE.BIN/
 *.old
 *.bak
 manifest.json.old
+/.junie/
