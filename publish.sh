@@ -8,5 +8,19 @@ if [ -z "$ZIP_FILE" ]; then
     exit 1
 fi
 
-echo "Publishing $ZIP_FILE to repository..."
-python -m jprm repo add . "$ZIP_FILE" -u "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater"
+VERSION=""
+if [ -f "jprm.yaml" ]; then
+    VERSION=$(grep -E "^version:" jprm.yaml | head -n 1 | awk '{print $2}' | tr -d '\r"')
+fi
+
+if [ -z "$VERSION" ]; then
+    FILENAME=$(basename "$ZIP_FILE" .zip)
+    VERSION=$(echo "$FILENAME" | sed 's/.*_//')
+fi
+
+TAG="v${VERSION#v}"
+ZIP_NAME=$(basename "$ZIP_FILE")
+PLUGIN_URL="https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater/releases/download/${TAG}/${ZIP_NAME}"
+
+echo "Publishing $ZIP_FILE to repository (release URL: $PLUGIN_URL)..."
+python -m jprm repo add . "$ZIP_FILE" -u "https://github.com/GalaxyCatD3v/GalaxyTV-PFP-Updater" -U "$PLUGIN_URL"
