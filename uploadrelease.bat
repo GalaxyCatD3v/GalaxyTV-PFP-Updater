@@ -52,24 +52,38 @@ echo Preparing release %TAG% with artifact %ZIP_FILE%...
 
 git add manifest.json galaxytv-pfp-updater\ jprm.yaml >nul 2>nul
 git diff --cached --quiet
-if %ERRORLEVEL% neq 0 (
+if !ERRORLEVEL! neq 0 (
     git commit -m "chore: release %TAG%"
     git push origin main
 )
 
+set "GH_AUTH=0"
 where gh >nul 2>nul
-if %ERRORLEVEL% equ 0 (
+if !ERRORLEVEL! equ 0 (
+    gh auth status >nul 2>&1
+    if !ERRORLEVEL! equ 0 (
+        set "GH_AUTH=1"
+    )
+)
+
+if "!GH_AUTH!"=="1" (
     echo Creating/uploading release on GitHub using gh CLI...
     gh release create "%TAG%" "%ZIP_FILE%" --title "GalaxyTV PFP Updater %TAG%" --generate-notes
     if !ERRORLEVEL! neq 0 (
         gh release upload "%TAG%" "%ZIP_FILE%" --clobber
+        if !ERRORLEVEL! neq 0 (
+            echo Warning: GitHub release creation/upload failed. Falling back to git tag...
+            git tag -a "%TAG%" -m "Release %TAG%" 2>nul
+            git push origin "%TAG%" 2>nul
+        )
     )
 ) else (
-    echo gh CLI not available. Creating and pushing git tag...
-    git tag -a "%TAG%" -m "Release %TAG%"
-    git push origin "%TAG%"
+    echo gh CLI not available or not authenticated. Creating and pushing git tag...
+    git tag -a "%TAG%" -m "Release %TAG%" 2>nul
+    git push origin "%TAG%" 2>nul
 )
 
 echo Release %TAG% processing complete.
 
 endlocal
+exit /b 0

@@ -30,16 +30,20 @@ if ! git diff --cached --quiet; then
 fi
 
 # Create release and upload the zip artifact binary
-if command -v gh >/dev/null 2>&1; then
+if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
     echo "Creating/uploading release on GitHub using gh CLI..."
     gh release create "$TAG" "$ZIP_FILE" \
         --title "GalaxyTV PFP Updater $TAG" \
         --generate-notes || \
-    gh release upload "$TAG" "$ZIP_FILE" --clobber
+    gh release upload "$TAG" "$ZIP_FILE" --clobber || {
+        echo "Warning: GitHub release upload failed, falling back to git tag."
+        git tag -a "$TAG" -m "Release $TAG" 2>/dev/null || true
+        git push origin "$TAG" 2>/dev/null || true
+    }
 else
-    echo "gh CLI not available. Creating and pushing git tag..."
-    git tag -a "$TAG" -m "Release $TAG" || true
-    git push origin "$TAG" || true
+    echo "gh CLI not available or not authenticated. Creating and pushing git tag..."
+    git tag -a "$TAG" -m "Release $TAG" 2>/dev/null || true
+    git push origin "$TAG" 2>/dev/null || true
 fi
 
 echo "Release $TAG processing complete."
