@@ -1,0 +1,12 @@
+name: GalaxyTV PFP Updater
+version: 1.0.0
+guid: 8f3e2a1b-4c5d-6e7f-8a9b-0c1d2e3f4a5b
+description: Updates user profile pictures from an external API.
+overview: Fetches profile pictures for each user from a configured API and updates them daily.
+owner: GalaxyLabs
+category: General
+changelog: Initial release
+targetAbi: 12.0.0.0
+framework: net10.0
+artifacts:
+  - GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.dll

@@ -24,4 +24,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: plugin-dll
-        path: bin/Release/net10.0/GalaxyLabs.JellyFin.Plugin.GalaxyTV_PFP_Updater.dll
+        path: bin/Release/net10.0/GalaxyLabs.JellyFin.Plugin.GalaxyTV-PFP-Updater.dll
